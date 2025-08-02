@@ -315,4 +315,4 @@ switch (ENVIRONMENT)
 require_once BASEPATH.'core/CodeIgniter.php';
 $system_path = 'system';
 $application_folder = 'application';
-die('Hello World');
+//die('Hello World');
