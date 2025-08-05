@@ -11,11 +11,11 @@ RUN apt-get update && apt-get install -y libpq-dev
 RUN docker-php-ext-install pgsql pdo_pgsql
 
 # Create subdirectory in Apache web root
-RUN mkdir -p /var/www/html/E-comm
+RUN mkdir -p /var/www/html/
 
 # Copy project into the Apache folder
 #COPY . /var/www/html
-COPY . /var/www/html/E-comm
+COPY . /var/www/html/
 
 # Change document root if needed:
 # By default Apache looks at /var/www/html
@@ -25,7 +25,7 @@ COPY . /var/www/html/E-comm
 RUN docker-php-ext-install mysqli pdo_mysql
 
 # Set recommended permissions
-RUN chown -R www-data:www-data /var/www/html/E-comm
+RUN chown -R www-data:www-data /var/www/html/
 
 EXPOSE 80
 
