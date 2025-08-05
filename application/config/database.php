@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => 'dpg-d290e07diees73ff5deg-a',
+	'username' => 'db_ecomm_user',
+	'password' => 'bcYl2to8RHXjZUQApDFoasIxqO3NbE9U',
 	'database' => 'db_ecomm',
-	'dbdriver' => 'mysqli',
+	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
