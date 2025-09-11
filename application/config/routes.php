@@ -50,39 +50,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 //$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'dashboard';
 
-$route['default_controller'] = 'UserController';
+$route['auth'] = 'auth';
+$route['dashboard'] = 'dashboard';
+$route['stock'] = 'stock';
+$route['sales'] = 'sales';
+$route['production'] = 'production';
+$route['expenses'] = 'expenses';
+$route['invoices'] = 'invoices';
+// $route['default_controller'] = 'UserController';
 
-$route['index'] = 'UserController/index';
-$route['login'] = 'UserController/login';
-$route['logout'] = 'UserController/logout';
+// $route['index'] = 'UserController/index';
+// $route['login'] = 'UserController/login';
+// $route['logout'] = 'UserController/logout';
 
-$route['DashboardIndex'] = 'DashboardController/DashboardIndex';
+// $route['DashboardIndex'] = 'DashboardController/DashboardIndex';
 
-$route['StockIndex'] = 'StockController/StockIndex';
-$route['GetAllStockRecords'] = 'StockController/GetAllStockRecords';
-$route['AddStockData'] = 'StockController/AddStockData';
-$route['DeleteStockData'] = 'StockController/DeleteStockData'; 
+// $route['StockIndex'] = 'StockController/StockIndex';
+// $route['GetAllStockRecords'] = 'StockController/GetAllStockRecords';
+// $route['AddStockData'] = 'StockController/AddStockData';
+// $route['DeleteStockData'] = 'StockController/DeleteStockData'; 
 
-$route['SalesIndex'] = 'SalesController/SalesIndex';
-$route['GetAllSalesRecords'] = 'SalesController/GetAllSalesRecords';
-$route['AddSalesData'] = 'SalesController/AddSalesData';
-$route['DeleteSalesData'] = 'SalesController/DeleteSalesData';
+// $route['SalesIndex'] = 'SalesController/SalesIndex';
+// $route['GetAllSalesRecords'] = 'SalesController/GetAllSalesRecords';
+// $route['AddSalesData'] = 'SalesController/AddSalesData';
+// $route['DeleteSalesData'] = 'SalesController/DeleteSalesData';
 
-$route['ProductionIndex'] = 'ProductionController/ProductionIndex';
-$route['GetAllProductionRecords'] = 'ProductionController/GetAllProductionRecords';
-$route['AddProductionData'] = 'ProductionController/AddProductionData';
-$route['DeleteProductionData'] = 'ProductionController/DeleteProductionData';
+// $route['ProductionIndex'] = 'ProductionController/ProductionIndex';
+// $route['GetAllProductionRecords'] = 'ProductionController/GetAllProductionRecords';
+// $route['AddProductionData'] = 'ProductionController/AddProductionData';
+// $route['DeleteProductionData'] = 'ProductionController/DeleteProductionData';
 
-$route['InvoicesIndex'] = 'InvoicesController/InvoicesIndex';
-$route['GetAllInvoicesRecords'] = 'InvoicesController/GetAllInvoicesRecords';
-$route['AddInvoicesData'] = 'InvoicesController/AddInvoicesData';
-$route['DeleteInvoicesData'] = 'InvoicesController/DeleteInvoicesData';
+// $route['InvoicesIndex'] = 'InvoicesController/InvoicesIndex';
+// $route['GetAllInvoicesRecords'] = 'InvoicesController/GetAllInvoicesRecords';
+// $route['AddInvoicesData'] = 'InvoicesController/AddInvoicesData';
+// $route['DeleteInvoicesData'] = 'InvoicesController/DeleteInvoicesData';
 
-$route['ExpensesIndex'] = 'ExpensesController/ExpensesIndex';
-$route['GetAllExpensesRecords'] = 'ExpensesController/GetAllExpensesRecords';
-$route['AddExpensesData'] = 'ExpensesController/AddExpensesData';
-$route['DeleteExpensesData'] = 'ExpensesController/DeleteExpensesData';
+// $route['ExpensesIndex'] = 'ExpensesController/ExpensesIndex';
+// $route['GetAllExpensesRecords'] = 'ExpensesController/GetAllExpensesRecords';
+// $route['AddExpensesData'] = 'ExpensesController/AddExpensesData';
+// $route['DeleteExpensesData'] = 'ExpensesController/DeleteExpensesData';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
