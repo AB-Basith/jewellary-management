@@ -134,12 +134,10 @@
             <table class="table table-hover mb-0" id="stockTable">
                 <thead class="thead-light">
                     <tr>
-                        <th>Product Name</th>
                         <th>Ornaments</th>
                         <th>Gram</th>
                         <th>Gram Rate</th>
-                        <th>Total Value</th>
-                        <th>Supplier</th>
+                        <th>Total Weight</th>
                         <th>Status</th>
                         <th>Actions</th>
                     </tr>
@@ -152,10 +150,9 @@
                                 <div class="avatar-sm bg-primary rounded-circle mr-2 d-flex align-items-center justify-content-center">
                                     <i class="fas fa-box text-white"></i>
                                 </div>
-                                <strong><?php echo $stock->product_name; ?></strong>
+                                <strong><?php echo $stock->ornaments; ?></strong>
                             </div>
                         </td>
-                        <td><span class="badge badge-secondary"><?php echo $stock->ornaments; ?></span></td>
                         <td>
                             <?php if ($stock->gram <= 5): ?>
                                 <span class="text-danger"><i class="fas fa-exclamation-triangle"></i> <?php echo $stock->gram; ?></span>
@@ -164,7 +161,6 @@
                             <?php endif; ?>
                         </td>
                         <td>$<?php echo number_format($stock->gram_rate, 2); ?></td>
-                        <!-- <td><strong>$<?php echo number_format($stock->gram * $stock->gram_rate, 2); ?></strong></td> -->
                         <?php
                             $gram = $stock->gram;
                             $rate = $stock->gram_rate;
@@ -174,24 +170,21 @@
                             $totalGram   = $gram + $wastageGram;
                             $totalValue  = $totalGram * $rate;
                         ?>
-                        <td><strong>$<?php echo number_format($totalValue, 2); ?></strong></td>
-                        <td><?php echo $stock->supplier; ?></td>
+                        <td><strong>$<?php echo number_format($totalValue, 2); //gram weight ?></strong></td> 
                         <td>
                             <?php if ($stock->gram > 20): ?>
-                                <span class="badge badge-success">In Stock</span>
-                            <?php elseif ($stock->gram > 10): ?>
-                                <span class="badge badge-warning">Medium</span>
+                                <span class="badge badge-success">New Stock</span>
                             <?php else: ?>
-                                <span class="badge badge-danger">Low Stock</span>
+                                <span class="badge badge-danger">Old Stock</span>
                             <?php endif; ?>
                         </td>
                         <td>
                             <div class="btn-group btn-group-sm" role="group">
-                                <a href="<?php echo base_url('stock/edit/'.$stock->id); ?>" 
+                                <a href="<?php echo base_url('stockmonthly/edit/'.$stock->id); ?>" 
                                    class="btn btn-outline-primary" title="Edit">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="<?php echo base_url('stock/delete/'.$stock->id); ?>" 
+                                <a href="<?php echo base_url('stockmonthly/delete/'.$stock->id); ?>" 
                                    class="btn btn-outline-danger" 
                                    onclick="return confirm('Are you sure you want to delete this item?')" 
                                    title="Delete">
