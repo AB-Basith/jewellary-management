@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h1 class="h3 mb-0 text-gray-800">Add New Stock Item</h1>
-    <a href="<?php echo base_url('stock'); ?>" class="btn btn-secondary btn-custom">
+    <a href="<?php echo base_url('stockmonthly'); ?>" class="btn btn-secondary btn-custom">
         <i class="fas fa-arrow-left"></i> Back to Stock
     </a>
 </div>
@@ -9,22 +9,12 @@
     <div class="col-lg-8">
         <div class="card">
             <div class="card-header">
-                <h6 class="m-0 font-weight-bold text-primary">Product Information</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Stock Information</h6>
             </div>
             <div class="card-body">
-                <?php echo form_open('stock/add', array('class' => 'needs-validation', 'novalidate' => '')); ?>
+                <?php echo form_open('stockmonthly/add', array('class' => 'needs-validation', 'novalidate' => '')); ?>
                 
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="product_name">Product Name <span class="text-danger">*</span></label>
-                            <input type="text" class="form-control" id="product_name" name="product_name" 
-                                   placeholder="Enter product name" required>
-                            <div class="invalid-feedback">
-                                Please provide a product name.
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="ornaments">Ornaments <span class="text-danger">*</span></label>
@@ -35,54 +25,85 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="quantity">No of Pieces<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="quantity" name="quantity" 
+                                   placeholder="Enter quantity" required>
+                            <div class="invalid-feedback">
+                                Please provide a quantity.
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
-                            <label for="gram">Gram <span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" id="gram" name="gram" 
-                                   placeholder="Enter gram" min="0" required>
+                            <label for="gram_wt">Gram Weight <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="gram_wt" name="gram_wt" 
+                                   placeholder="Enter Gram Weight" min="0" required>
                             <div class="invalid-feedback">
                                 Please provide a valid gram.
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group">
-                            <label for="wastage_percent">Wastage Percentage (%) <span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" id="wastage_percent" name="wastage_percent" 
-                                   placeholder="0.00" step="0.01" min="0" required>
-                            <div class="invalid-feedback">
-                                Please provide a valid Wastage Percentage.
+                            <div class="form-group">
+                                <label for="dealer">Dealer</label>
+                                <input type="text" class="form-control" id="dealer" name="dealer" 
+                                    placeholder="Enter dealer name">
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
                         <div class="form-group">
-                            <label for="gram_rate">Gram Rate ($) <span class="text-danger">*</span></label>
-                            <input type="number" class="form-control" id="gram_rate" name="gram_rate" 
-                                   placeholder="0.00" step="0.01" min="0" required>
+                            <label for="metal_type">Metal Type <span class="text-danger">*</span></label>
+                            
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="old" name="metal_type" value="Old" class="custom-control-input" required>
+                                <label class="custom-control-label" for="old">Old Gold</label>
+                            </div>
+
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="new" name="metal_type" value="New" class="custom-control-input" required>
+                                <label class="custom-control-label" for="new">New gold</label>
+                            </div>
+
                             <div class="invalid-feedback">
-                                Please provide a valid Gram Rate.
+                                Please select a metal type.
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="supplier">Supplier</label>
-                    <input type="text" class="form-control" id="supplier" name="supplier" 
-                           placeholder="Enter supplier name">
-                </div>
+                
                 
                 <div class="form-group">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h6 class="card-title">Calculated Total Value</h6>
-                            <p class="card-text">
-                                <span class="h4 text-primary" id="totalValue">$0.00</span>
-                            </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h6 class="card-title">Calculated Total Value</h6>
+                                    <p class="card-text">
+                                        <span class="h4 text-primary" id="totalValue">$0.00</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h6 class="card-title">Calculated Total Weight</h6>
+                                    <p class="card-text">
+                                        <span class="h4 text-primary" id="totalValue">$0.00</span>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -93,7 +114,7 @@
                     <button type="submit" class="btn btn-primary btn-custom">
                         <i class="fas fa-save"></i> Save Stock Item
                     </button>
-                    <a href="<?php echo base_url('stock'); ?>" class="btn btn-secondary btn-custom ml-2">
+                    <a href="<?php echo base_url('stockmonthly'); ?>" class="btn btn-secondary btn-custom ml-2">
                         Cancel
                     </a>
                 </div>
